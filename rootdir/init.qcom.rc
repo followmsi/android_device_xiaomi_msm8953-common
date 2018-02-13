@@ -312,6 +312,9 @@ on post-fs-data
     # Create /data/time folder for time-services
     mkdir /data/time/ 0700 system system
 
+    # Symlink time-services data to data/time, as TWRP doesn't want to look in vendor
+    symlink /data/vendor/time /data/time
+
     mkdir /data/vendor/audio/ 0770 media audio
 
     # Create a folder for audio delta files
